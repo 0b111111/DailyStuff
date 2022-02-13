@@ -38,7 +38,7 @@ namespace DailyStuff
             }
             Console.WriteLine("smthing: "+smthing);
             Console.Write("Enter a switch number: ");
-            ulong e=Convert.ToUInt64(Console.ReadLine());
+            ulong e=3;//Convert.ToUInt64(Console.ReadLine());
             switch(e)
             {
                 case 1:
@@ -69,12 +69,37 @@ namespace DailyStuff
                 Console.WriteLine("{0} x {1} = {2}", userValue, i, userValue*i);
             }*/
             //Console.WriteLine("some text {0} and {1} but {5} why {3} not {4}","and another","why not","you know",5,2,"yes?");
-            /*int x=5,y=10;
+            int x=5,y=10;
             if(x>3|++y<5)
             {
                 Console.WriteLine("\nTrue\nx: {0}\ny: {1}",x,y);
             }
-            else Console.WriteLine("\nTrue\nx: {0}\ny: {1}",x,y);*/
+            else Console.WriteLine("\nTrue\nx: {0}\ny: {1}",x,y);
+            do
+            {
+                try
+                {
+                    Console.Write("Enter a number: ");
+                    String str=Console.ReadLine();
+                    Int64 c;
+                    //str=="exit" ? break : Int64 c=Convert.ToInt64(str);
+                    if(str=="exit")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        c=Convert.ToInt64(str);
+                    }
+                    Console.WriteLine("{0}+2={1}",c,c+2);
+                }
+                catch(Exception E)
+                {
+                    //Console.WriteLine("Console.WriteLine(E): "+E);
+                    //Console.WriteLine("Console.WriteLine(E.ToString()): "+E.ToString());
+                    Console.WriteLine("Console.WriteLine(E.Message): "+E.Message);
+                }
+            }while(true);
 
             Over();
         }
