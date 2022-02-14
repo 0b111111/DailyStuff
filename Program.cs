@@ -39,10 +39,23 @@ namespace DailyStuff
             if(e==1)return 1;
             return e*Powertrain(e-1);
         }
+        class Person
+        {
+            ulong age;
+            String name;
+            public void SayHi()
+            {
+                Console.WriteLine("Hi!");
+            }
+        }
         static void Main()
         {
             Console.ForegroundColor=ConsoleColor.Green;
             Console.BackgroundColor=ConsoleColor.Black;
+
+            Person p0=new Person();
+            p0.SayHi();
+
             //Console.Write("Enter a natural number: ");
             //var smthing=Convert.ToUInt64(Console.ReadLine());
             /*var smthing=5;
@@ -137,8 +150,6 @@ namespace DailyStuff
             Console.WriteLine("Your old carse are: "+fcar+' '+scar);
             Upgrade(out fcar,out scar);
             Console.WriteLine($"Your new cars are: "+fcar+' '+scar);*/
-
-
 
             Over();
         }
