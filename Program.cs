@@ -13,13 +13,31 @@ namespace DailyStuff
             Console.Write("\nPress any key to continue...");
             Console.ReadKey();
         }
+        static Int64 Pow(Int64 a,Int64 b=2)
+        {
+            Int64 sum=1;
+            for(int x=0;x<b;x++)
+            {
+                sum*=a;
+            }
+            return sum;
+        }
+        static void Square(out int x)
+        {
+            x*=x;
+        }
+        static void Upgrade(out String a,out String b)
+        {
+            a="Lamborghini";
+            b="Porsche";
+        }
         static void Main(string[] args)
         {
             Console.ForegroundColor=ConsoleColor.Green;
             Console.BackgroundColor=ConsoleColor.Black;
             //Console.Write("Enter a natural number: ");
             //var smthing=Convert.ToUInt64(Console.ReadLine());
-            var smthing=5;
+            /*var smthing=5;
             if(smthing++==8)
             {
                 Console.WriteLine("It's 8");
@@ -53,7 +71,7 @@ namespace DailyStuff
                 case 0:
                     Console.WriteLine("default");
                     break;
-            }
+            }*/
             /*UInt64 x=0;
             while(true)
             {
@@ -69,7 +87,7 @@ namespace DailyStuff
                 Console.WriteLine("{0} x {1} = {2}", userValue, i, userValue*i);
             }*/
             //Console.WriteLine("some text {0} and {1} but {5} why {3} not {4}","and another","why not","you know",5,2,"yes?");
-            int x=5,y=10;
+            /*int x=5,y=10;
             if(x>3|++y<5)
             {
                 Console.WriteLine("\nTrue\nx: {0}\ny: {1}",x,y);
@@ -99,7 +117,18 @@ namespace DailyStuff
                     //Console.WriteLine("Console.WriteLine(E.ToString()): "+E.ToString());
                     Console.WriteLine("Console.WriteLine(E.Message): "+E.Message);
                 }
-            }while(true);
+            }while(true);*/
+            //Console.WriteLine(Pow(5));
+
+            int x=4;
+            //Console.WriteLine(x);
+            Square(out x);
+            Console.WriteLine(x);
+
+            /*string fcar,scar;
+            Console.WriteLine("Your old carse are: "+fcar+' '+scar);
+            Upgrade(out fcar,out scar);
+            Console.WriteLine($"Your new cars are: "+fcar+' '+scar);*/
 
             Over();
         }
