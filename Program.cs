@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace DailyStuff
             Console.Write("\nPress any key to continue...");
             Console.ReadKey();
         }
-        static Int64 Pow(Int64 a,Int64 b=2)
+        public static Int64 Pow(Int64 a,Int64 b=2)
         {
             Int64 sum=1;
             for(int x=0;x<b;x++)
@@ -22,16 +23,23 @@ namespace DailyStuff
             }
             return sum;
         }
-        static void Square(out int x)
+        public static void Square(ref int x)
         {
             x*=x;
         }
-        static void Upgrade(out String a,out String b)
+        public static void Upgrade(out String a,out String b)
         {
             a="Lamborghini";
             b="Porsche";
         }
-        static void Main(string[] args)
+        public static int Powertrain(int e)
+        {
+            Console.WriteLine("Received: "+e);
+            //Thread.Sleep(1);
+            if(e==1)return 1;
+            return e*Powertrain(e-1);
+        }
+        static void Main()
         {
             Console.ForegroundColor=ConsoleColor.Green;
             Console.BackgroundColor=ConsoleColor.Black;
@@ -120,15 +128,17 @@ namespace DailyStuff
             }while(true);*/
             //Console.WriteLine(Pow(5));
 
-            int x=4;
+            /*int x=4;
             //Console.WriteLine(x);
-            Square(out x);
-            Console.WriteLine(x);
+            Square(ref x);
+            Console.WriteLine(x);*/
 
             /*string fcar,scar;
             Console.WriteLine("Your old carse are: "+fcar+' '+scar);
             Upgrade(out fcar,out scar);
             Console.WriteLine($"Your new cars are: "+fcar+' '+scar);*/
+
+
 
             Over();
         }
