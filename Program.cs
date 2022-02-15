@@ -39,22 +39,55 @@ namespace DailyStuff
             if(e==1)return 1;
             return e*Powertrain(e-1);
         }
-        class Person
+        public class Person
         {
-            ulong age;
-            String name;
+            public ulong age;
+            private String _Name;
+            public String Name
+            {
+                get
+                {
+                    return _Name;
+                }
+                set
+                {
+                    _Name=value;
+                }
+            }
+            private Double _money=0;
             public void SayHi()
             {
                 Console.WriteLine("Hi!");
             }
+            public Person(String nm)
+            {
+                Console.WriteLine("Hello world!");
+                Name=nm;
+            }
+            public Person(String nm,ulong aged)
+            {
+                Name=nm;
+                age=aged;
+                Console.WriteLine("Hello world!");
+            }
+            public Double GetAvailableBalance()
+            {
+                return _money;
+            }
+            public String Hairs { get;set; }
         }
         static void Main()
         {
             Console.ForegroundColor=ConsoleColor.Green;
             Console.BackgroundColor=ConsoleColor.Black;
 
-            Person p0=new Person();
+            Person p0=new Person("Klara",17);
             p0.SayHi();
+            Console.WriteLine(p0.GetAvailableBalance()+" money");
+            Console.WriteLine("name: "+p0.Name);
+            p0.Name="Ada";
+            Console.WriteLine($"name: {p0.Name}");
+            p0.Hairs="black";
 
             //Console.Write("Enter a natural number: ");
             //var smthing=Convert.ToUInt64(Console.ReadLine());
